@@ -14,7 +14,8 @@ Create database students in postgresql
 5. ALTER ROLE students SET default_transaction_isolation TO 'read committed'; 
 6. ALTER ROLE students SET timezone TO 'UTC';
 7. GRANT ALL PRIVILEGES ON DATABASE students TO students; 
-8. \q
+8. Restore the dump with the command psql students<student.sql
+9. \q
 
 Flow
 -----
@@ -29,7 +30,7 @@ Flow
 
 REST API Endpoints
 -------------------
-1. List students: http://127.0.0.1:8000/student/api 
+1. List students: http://127.0.0.1:8000/student/api/list
 2. Add student: http:127.0.0.1:8000/student/api/create 
-3. Update student: http:127.0.0.1:8000/student/api/ 
-4. Delete student: http:127.0.0.1:8000/student/api//delete
+3. Update student: http:127.0.0.1:8000/student/api/student-id
+4. Delete student: http:127.0.0.1:8000/student/api/student-id/delete
