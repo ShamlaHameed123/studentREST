@@ -1,0 +1,9 @@
+<div class="card-body" align="center">
+    <h5>Add new Student</h5></br>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <a type="button" class="btn btn-danger" href="http://localhost:8001/home">Cancel</a>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+</div>

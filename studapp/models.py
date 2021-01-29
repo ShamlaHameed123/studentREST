@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Student(models.Model):
-    Id = models.IntegerField(primary_key=True)
+    Id = models.AutoField(primary_key=True)
     First_name = models.CharField(max_length=100)
     Last_name = models.CharField(max_length=100)
     Date_of_birth = models.DateField()
