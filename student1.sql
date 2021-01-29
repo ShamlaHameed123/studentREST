@@ -389,6 +389,27 @@ CREATE TABLE public.studapp_student (
 ALTER TABLE public.studapp_student OWNER TO students;
 
 --
+-- Name: studapp_student_Id_seq; Type: SEQUENCE; Schema: public; Owner: students
+--
+
+CREATE SEQUENCE public."studapp_student_Id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public."studapp_student_Id_seq" OWNER TO students;
+
+--
+-- Name: studapp_student_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: students
+--
+
+ALTER SEQUENCE public."studapp_student_Id_seq" OWNED BY public.studapp_student."Id";
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: students
 --
 
@@ -449,6 +470,13 @@ ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval(
 --
 
 ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
+
+
+--
+-- Name: Id; Type: DEFAULT; Schema: public; Owner: students
+--
+
+ALTER TABLE ONLY public.studapp_student ALTER COLUMN "Id" SET DEFAULT nextval('public."studapp_student_Id_seq"'::regclass);
 
 
 --
@@ -634,6 +662,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 21	studapp	0003_auto_20210125_1913	2021-01-25 19:13:53.953943+00
 22	studapp	0004_student_class_level	2021-01-25 19:23:38.767908+00
 23	studapp	0006_remove_student_class	2021-01-25 19:23:38.796746+00
+24	studapp	0007_auto_20210128_1525	2021-01-28 15:25:49.209264+00
 \.
 
 
@@ -641,7 +670,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: students
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 23, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 24, true);
 
 
 --
@@ -657,9 +686,20 @@ COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 --
 
 COPY public.studapp_student ("Id", "First_name", "Last_name", "Date_of_birth", "Email", "Parent_name", "Phone_number", "DateAdded", "DateUpdated", "Year_joined", "Class_level") FROM stdin;
-2	sdfsdf	dsfsdfsdf	1995-01-02	adskdalsjd@gmail.com	fsdfsdf	1566541315	2021-01-25	2021-01-25	2005	1
-1	sdkfjsdfh	sdkfjsldfj	1996-01-02	adskdalsjd@gmail.com	ksjdfjfdl	1566541302	2021-01-17	2021-01-25	2005	1
+2	jan	dsfsdfsdf	1995-01-02	adskdalsjd@gmail.com	fsdfsdf	1566541315	2021-01-25	2021-01-28	2005	1
+4	fdsfsdf	wwww	2021-01-09	mmmdmdmd@gmail.com	kjsdklsd ddsd	1144554852	2021-01-07	2021-01-28	2014	2
+5	hjjhjhj	kjhkjhkh	1982-01-01	jhgkgjhgjhgjh	jhkhkh	22254215	2019-11-14	2021-01-28	2015	4
+6	dfgfdgfdgerwer	erwerwr	2021-01-09	erwerwer	sdfdsfdsf	1258457	2015-07-16	2021-01-28	2004	3
+7	dfgfdgfdgerwer	erwerwr	2021-01-09	erwerwer	sdfdsfdsf	12584574	2015-07-16	2021-01-28	2004	3
+1	sdkfjsdfh	sdkfjsldfj	1996-01-02	edited@gmail.com	ksjdfjfdl	1566541302	2021-01-04	2021-01-29	2005	1
 \.
+
+
+--
+-- Name: studapp_student_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: students
+--
+
+SELECT pg_catalog.setval('public."studapp_student_Id_seq"', 7, true);
 
 
 --
