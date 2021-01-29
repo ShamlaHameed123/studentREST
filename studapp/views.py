@@ -18,9 +18,14 @@ class StudentCreateApi(APIView):
 
 class StudentApi(APIView):
     def get(self, request, *args, **kwargs):
-        queryset = Student.objects.all()
-        context={"data":list(queryset.values())}
-        print(context)
+        draw = int(request.GET.get('draw', 0))
+        length = int(request.GET.get('length', 25))
+        start = int(request.GET.get('start', 0))
+        querysets = Student.objects.all()
+        total = querysets.count()
+
+        queryset = querysets[start:start+length]
+        context={"data":list(queryset.values()), "recordsTotal":total, "recordsFiltered": total}
         return Response(context)
 
 
