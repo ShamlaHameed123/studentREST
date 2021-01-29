@@ -692,6 +692,11 @@ COPY public.studapp_student ("Id", "First_name", "Last_name", "Date_of_birth", "
 6	dfgfdgfdgerwer	erwerwr	2021-01-09	erwerwer	sdfdsfdsf	1258457	2015-07-16	2021-01-28	2004	3
 7	dfgfdgfdgerwer	erwerwr	2021-01-09	erwerwer	sdfdsfdsf	12584574	2015-07-16	2021-01-28	2004	3
 1	sdkfjsdfh	sdkfjsldfj	1996-01-02	edited@gmail.com	ksjdfjfdl	1566541302	2021-01-04	2021-01-29	2005	1
+8	kiran	ji	2011-03-10	kiranji@gmail.com	kiran nath	14545112	2021-01-12	2021-01-29	2015	7
+9	sofia	mariam	2015-02-01	sofia@gmail.com	george	2244557	2021-01-24	2021-01-29	2016	4
+10	thampan	george	2014-07-04	thampan@gmail.com	hira	1346857	2021-01-05	2021-01-29	2003	4
+11	laila	kk	2001-05-06	layla@gmail.com	jeena	13456215	2021-01-01	2021-01-29	2004	4
+12	hima	dev	2006-11-03	hima@gmail.com	kony	3465852	2021-01-02	2021-01-29	2012	3
 \.
 
 
@@ -699,7 +704,7 @@ COPY public.studapp_student ("Id", "First_name", "Last_name", "Date_of_birth", "
 -- Name: studapp_student_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: students
 --
 
-SELECT pg_catalog.setval('public."studapp_student_Id_seq"', 7, true);
+SELECT pg_catalog.setval('public."studapp_student_Id_seq"', 12, true);
 
 
 --
